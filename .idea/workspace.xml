@@ -31,6 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../django/ModelsCheck" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -54,7 +55,9 @@
       <workItem from="1597069300467" duration="21000" />
       <workItem from="1597249097714" duration="7641000" />
       <workItem from="1597297847628" duration="6517000" />
-      <workItem from="1597305102113" duration="8573000" />
+      <workItem from="1597305102113" duration="27103000" />
+      <workItem from="1597405620252" duration="8717000" />
+      <workItem from="1597421582894" duration="4870000" />
     </task>
     <servers />
   </component>
@@ -81,6 +84,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597300982527" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1597420115636">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1597420115636" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597308550630">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

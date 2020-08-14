@@ -12,12 +12,12 @@ class Contacts ( models.Model ):
     class Meta:
         abstract = True
 
-class CustomUser ( AbstractUser , Contacts):
+class CustomUser ( AbstractUser , Contacts ):
     """
     Custom User Model to add additional attributes to User Model
     """
-    middle_name = models.CharField ( max_length = 120 )
-    date_of_birth = models.DateTimeField ()
+    middle_name = models.CharField ( max_length = 120 , null= True)
+    date_of_birth = models.DateField ()
     profile_pictures = models.ImageField ( blank=True )
     REQUIRED_FIELDS = ['date_of_birth', 'contact_number']
 

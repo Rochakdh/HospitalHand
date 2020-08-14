@@ -124,3 +124,4 @@ STATIC_URL = '/static/'
 
 #Acknowledging Django To Use Custom User Model
 AUTH_USER_MODEL = 'userauth.CustomUser'
+
