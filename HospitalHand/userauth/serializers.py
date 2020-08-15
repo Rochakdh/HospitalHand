@@ -52,8 +52,20 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         :return: instance of the CustomUser
         """
         password = validated_data['password']
-        user = super(CustomUserModelSearializers, self).create(validated_data)
-        user.set_password(password)           # converting to hashable password
+        user = super( CustomUserModelSearializers, self ).create( validated_data )
+        user.set_password( password )           # converting to hashable password
         user.save()
         return user
+
+    def update(self, instance, validated_data):
+        """
+            Overriding update class to set hashable password of user
+            :return: instance of the CustomUser
+        """
+        password = validated_data [ 'password' ]
+        user = super( CustomUserModelSearializers, self ).update( instance,validated_data )
+        user.set_password( password )  # converting to hashable password
+        user.save()
+        return user
+
 

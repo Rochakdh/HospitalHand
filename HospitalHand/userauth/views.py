@@ -18,6 +18,14 @@ class UpdateUserView(UpdateAPIView):
         Updating User Profile of CustomUser
     """
     serializer_class = CustomUserModelSearializers
+    lookup_field = 'id'
+    queryset = CustomUser.objects.all()
+
+
+
+
+
+
 
 
 
