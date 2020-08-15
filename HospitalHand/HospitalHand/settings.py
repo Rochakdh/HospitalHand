@@ -35,7 +35,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'categories',
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -46,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'HospitalHand.urls'
@@ -67,6 +72,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'HospitalHand.wsgi.application'
+
+# whilelisting our frontend port
+
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:3000"
+]
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
