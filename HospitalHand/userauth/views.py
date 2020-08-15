@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView,UpdateAPIView
 from rest_framework.response import Response
 
 from . serializers import CustomUserModelSearializers
@@ -8,9 +8,17 @@ from .models import CustomUser
 USER = get_user_model()
 class SignUpView(CreateAPIView):
     """
-    Sign up functionality for creating object of Custom User Model with CustomUserModelSearializers
+    Sign Up functionality for creating object of
+    Custom User Model with CustomUserModelSearializers
     """
     serializer_class = CustomUserModelSearializers
+
+class UpdateUserView(UpdateAPIView):
+    """
+        Updating User Profile of CustomUser
+    """
+    serializer_class = CustomUserModelSearializers
+
 
 
 

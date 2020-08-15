@@ -56,3 +56,4 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         user.set_password(password)           # converting to hashable password
         user.save()
         return user
+
