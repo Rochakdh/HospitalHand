@@ -32,9 +32,9 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../django/ModelsCheck" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/HospitalHand" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\XPS\AppData\Roaming\Subversion</configuration>
@@ -60,6 +60,10 @@
       <workItem from="1597421582894" duration="8652000" />
       <workItem from="1597472889471" duration="1180000" />
       <workItem from="1597474721632" duration="1032000" />
+      <workItem from="1597562993925" duration="18000" />
+      <workItem from="1597563026577" duration="2450000" />
+      <workItem from="1597565520477" duration="10000" />
+      <workItem from="1597565556438" duration="547000" />
     </task>
     <servers />
   </component>
@@ -90,18 +94,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1597420115636" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1597429627922">
+    <state x="372" y="191" key="FileChooserDialogImpl" timestamp="1597565697371">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597429627922" />
+    <state x="372" y="191" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597565697371" />
     <state width="198" height="457" key="HiddenNamespacesPopup" timestamp="1597300906598">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="198" height="457" key="HiddenNamespacesPopup/0.0.1280.680@0.0.1280.680" timestamp="1597300906598" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1597311205221">
+    <state x="265" y="0" key="SettingsEditor" timestamp="1597565780246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597311205221" />
+    <state x="265" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597565780246" />
     <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog" timestamp="1597300815347">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -110,5 +114,16 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1597253315707" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/HospitalHand/HospitalHand/settings.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
