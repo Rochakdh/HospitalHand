@@ -12,4 +12,8 @@ class DoctorsModelCreateAPIView(CreateAPIView):
 
 class DoctorsModelListAPIView(ListAPIView):
     serializer_class = DoctorsModelSerializer
-    queryset = Doctor.objects.all()
+    lookup_field = "department"
+
+    def get_queryset(self):
+        department = self.kwargs['department']
+        return Doctor.objects.filter(department=department)
