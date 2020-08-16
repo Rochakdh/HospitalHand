@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'notice',
+    'rest_framework',
+    'corsheaders',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -68,6 +73,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'HospitalHand.wsgi.application'
+
+CORS_ORIGIN_REGEX_WHITELIST = [
+    "http://127.0.0.1:3000",
+]
 
 
 # Database
