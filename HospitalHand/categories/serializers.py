@@ -6,5 +6,5 @@ from .models import Doctor
 class DoctorsModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
-        fields = ['name', 'added_on', 'department', 'id']
+        fields = ['name', 'experience', 'department', 'id']
         read_only_fields = ['id']
