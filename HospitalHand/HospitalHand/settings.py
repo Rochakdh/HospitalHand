@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'userauth',
     'appointment',
     'categories',
-    'corsheaders'
+    'hospital',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [

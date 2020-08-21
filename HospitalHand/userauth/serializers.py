@@ -1,37 +1,35 @@
-from dataclasses import field
-
 from rest_framework import serializers
 from .models import CustomUser
 
 
-class CustomUserModelSearializers ( serializers.ModelSerializer ):
+class CustomUserModelSearializers(serializers.ModelSerializer):
     """
     Serializers to Model CustomUser
     """
 
-    password = serializers.CharField( max_length=128,
-                                      style={'input_type':'password'})
+    password = serializers.CharField(max_length=128,
+                                     style={'input_type': 'password'})
 
-    confirm_password = serializers.CharField( max_length=128,
-                                             style={'input_type':'password'},
-                                             write_only=True )
+    confirm_password = serializers.CharField(max_length=128,
+                                             style={'input_type': 'password'},
+                                             write_only=True)
+
     class Meta:
         model = CustomUser
-        fields = ['first_name','middle_name','last_name','email',
-                  'username','date_of_birth','contact_number',
-                  'contact_address','password','confirm_password',]
-
+        fields = ['first_name', 'middle_name', 'last_name', 'email',
+                  'username', 'date_of_birth', 'contact_number',
+                  'contact_address', 'password', 'confirm_password', ]
 
     @staticmethod
-    def validate_contact_number( contact_number ):
+    def validate_contact_number(contact_number):
         """
         Validate the contact number field
         """
-        if len( str( contact_number ) ) != 10:
+        if len(str(contact_number)) != 10:
             raise serializers.ValidationError("Invalid Contact Number. Your Number should be of 10 digits")
         return contact_number
 
-    def validate(self,data):
+    def validate(self, data):
         """
         Checks if the password and confirm password matches
         :param data: dictionary key,value from field,submitted data
@@ -52,8 +50,8 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         :return: instance of the CustomUser
         """
         password = validated_data['password']
-        user = super( CustomUserModelSearializers, self ).create( validated_data )
-        user.set_password( password )           # converting to hashable password
+        user = super(CustomUserModelSearializers, self).create(validated_data)
+        user.set_password(password)  # converting to hashable password
         user.save()
         return user
 
@@ -62,10 +60,8 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
             Overriding update class to set hashable password of user
             :return: instance of the CustomUser
         """
-        password = validated_data [ 'password' ]
-        user = super( CustomUserModelSearializers, self ).update( instance,validated_data )
-        user.set_password( password )  # converting to hashable password
+        password = validated_data['password']
+        user = super(CustomUserModelSearializers, self).update(instance, validated_data)
+        user.set_password(password)  # converting to hashable password
         user.save()
         return user
-
-
