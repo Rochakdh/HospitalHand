@@ -66,7 +66,12 @@
       <workItem from="1597565556438" duration="1143000" />
       <workItem from="1597637286989" duration="33000" />
       <workItem from="1597637334262" duration="1816000" />
-      <workItem from="1597666465640" duration="8523000" />
+      <workItem from="1597666465640" duration="9108000" />
+      <workItem from="1597679277072" duration="1811000" />
+      <workItem from="1597749139883" duration="7597000" />
+      <workItem from="1597844519941" duration="3577000" />
+      <workItem from="1597890735504" duration="6435000" />
+      <workItem from="1598008852473" duration="7511000" />
     </task>
     <servers />
   </component>
@@ -97,10 +102,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1597420115636" />
-    <state x="372" y="191" key="FileChooserDialogImpl" timestamp="1597670886453">
+    <state x="372" y="191" key="FileChooserDialogImpl" timestamp="1597855971608">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="372" y="191" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597670886453" />
+    <state x="372" y="191" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597855971608" />
     <state width="198" height="457" key="HiddenNamespacesPopup" timestamp="1597300906598">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -117,16 +122,5 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1597253315707" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/HospitalHand/HospitalHand/settings.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

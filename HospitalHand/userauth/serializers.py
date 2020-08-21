@@ -17,9 +17,9 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
                                              write_only=True )
     class Meta:
         model = CustomUser
-        fields = ['first_name','middle_name','last_name','email',
-                  'username','date_of_birth','contact_number',
-                  'contact_address','password','confirm_password',]
+        fields = [ 'email',
+                  'username','contact_number',
+                  'password','confirm_password',]
 
 
     @staticmethod
@@ -27,8 +27,11 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         """
         Validate the contact number field
         """
+        if contact_number is None:
+            raise serializers.ValidationError("Enter your Contact Number")
+
         if len( str( contact_number ) ) != 10:
-            raise serializers.ValidationError("Invalid Contact Number. Your Number should be of 10 digits")
+            raise serializers.ValidationError("Contact Number should be of 10 digits")
         return contact_number
 
     def validate(self,data):
@@ -67,5 +70,3 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         user.set_password( password )  # converting to hashable password
         user.save()
         return user
-
-

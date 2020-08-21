@@ -12,11 +12,6 @@ class Appointment(models.Model):
     fixed_appointment = models.BooleanField(default=False)
     appointment_time = models.DateTimeField(default=None,blank=True,null=True)
     date_posted = models.DateField(auto_now=True)
+    select_hospital = models.Choices
 
-    def year(self):
-        return self.date_posted.year
-    def month(self):
-        return self.date_posted.month
-    def day (self):
-        return self.date_posted.day
 
