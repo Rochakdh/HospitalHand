@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Doctor
+from .models import Doctor, Department
 
 
 class DoctorsModelSerializer(serializers.ModelSerializer):
@@ -9,4 +9,11 @@ class DoctorsModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Doctor
         fields = ['name', 'experience', 'department', 'hospital', 'id']
+        read_only_fields = ['id']
+
+
+class DepartmentModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Department
+        fields = ['department_name', 'id']
         read_only_fields = ['id']

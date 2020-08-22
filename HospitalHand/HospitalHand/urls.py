@@ -22,4 +22,5 @@ urlpatterns = [
     path('user/', include('userauth.urls', namespace='user')),
     path('hospital/', include('hospital.urls')),
 
+
 ]
