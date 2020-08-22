@@ -8,17 +8,16 @@ from rest_framework.generics import CreateAPIView,ListAPIView
 from .forms import notice_form
 from .models import notice_model
 from .serializers import notice_serializers
+from .task import sleepy
 
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.decorators import parser_classes
+
 
 class notice_view(CreateAPIView):
     serializer_class=notice_serializers
 
 class notice_list_view(ListAPIView):
+    sleepy(10)
     serializer_class=notice_serializers
-    qs=notice_model.objects.all()
+    queryset=notice_model.objects.all()
 
-    def get_queryset(self):
-        return notice_model.objects.all()
+    

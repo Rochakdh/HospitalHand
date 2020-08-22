@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'notice',
     'rest_framework',
     'corsheaders',
-    'rest_framework.authtoken'
+    'django_celery_beat',
+    'redis',
+    # 'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -75,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'HospitalHand.wsgi.application'
 
 CORS_ORIGIN_REGEX_WHITELIST = [
-    "http://127.0.0.1:3000",
+    "http://localhost:3000",
 ]
 
 
@@ -127,3 +129,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# CELERY STUFF
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Nepal Time'
