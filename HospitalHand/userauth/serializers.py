@@ -4,22 +4,26 @@ from rest_framework import serializers
 from .models import CustomUser
 
 
-class CustomUserModelSearializers ( serializers.ModelSerializer ):
+class CustomUserModelSerializers ( serializers.ModelSerializer ):
     """
     Serializers to Model CustomUser
     """
-
-    password = serializers.CharField( max_length=128,
-                                      style={'input_type':'password'})
 
     confirm_password = serializers.CharField( max_length=128,
                                              style={'input_type':'password'},
                                              write_only=True )
     class Meta:
         model = CustomUser
-        fields = [ 'email',
-                  'username','contact_number',
-                  'password','confirm_password',]
+        fields = ['id', 'email',
+                  'username','contact_number','contact_address',
+                  'password','confirm_password','first_name','middle_name','last_name','date_of_birth','profile_pictures']
+        read_only_fields = ['first_name','middle_name','last_name','date_of_birth','profile_pictures','id']
+        extra_kwargs = {
+            'password':{
+                'write_only' : True
+            }
+        }
+
 
 
     @staticmethod
@@ -40,14 +44,17 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         :param data: dictionary key,value from field,submitted data
         :return data without confirm_password key in dictionary:
         """
-        password = data['password']
-        confirm_password = data['confirm_password']
-        if password != confirm_password:
-            raise serializers.ValidationError("password do not match")
-        else:
-            # Popping out confirm_password key,value as there is no attribute in model to save
-            _ = data.pop('confirm_password')
-        return data
+        view = self.context.get('view')
+        if view and view.action == 'create':
+            password = data['password']
+            confirm_password = data['confirm_password']
+            if password != confirm_password:
+                raise serializers.ValidationError("password do not match")
+            else:
+                # Popping out confirm_password key,value as there is no attribute in model to save
+                _ = data.pop('confirm_password')
+            return data
+        return super().validate(data)
 
     def create(self, validated_data):
         """
@@ -55,18 +62,39 @@ class CustomUserModelSearializers ( serializers.ModelSerializer ):
         :return: instance of the CustomUser
         """
         password = validated_data['password']
-        user = super( CustomUserModelSearializers, self ).create( validated_data )
+        user = super( CustomUserModelSerializers, self ).create( validated_data )
         user.set_password( password )           # converting to hashable password
         user.save()
         return user
 
-    def update(self, instance, validated_data):
-        """
-            Overriding update class to set hashable password of user
-            :return: instance of the CustomUser
-        """
-        password = validated_data [ 'password' ]
-        user = super( CustomUserModelSearializers, self ).update( instance,validated_data )
-        user.set_password( password )  # converting to hashable password
-        user.save()
-        return user
+    # def update(self, instance, validated_data):
+    #     """
+    #         Overriding update class to set hashable password of user
+    #         :return: instance of the CustomUser
+    #     """
+    #     password = validated_data [ 'password' ]
+    #     user = super( CustomUserModelSerializers, self ).update( instance,validated_data )
+    #     user.set_password( password )  # converting to hashable password
+    #     user.save()
+    #     return user
+
+    def get_fields(self):
+        fields = super().get_fields()
+        # print(fields)
+        view = self.context.get('view')
+        if view and view.action in ['update' ,'partial_update']:
+            print(fields.get('password'))
+            fields.pop('password')
+            fields.pop('confirm_password')
+            fields['first_name'].read_only = False
+            fields['middle_name'].read_only = False
+            fields['last_name'].read_only = False
+
+            # fields.update({
+            #     'first_name': '',
+            #     'middle_name':'',
+            #     'last_name':'',
+            #     'date_of_birth':''
+            #     })
+            # print(fields)
+        return fields
