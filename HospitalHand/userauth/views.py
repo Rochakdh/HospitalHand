@@ -7,17 +7,18 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.authtoken.views import ObtainAuthToken
 
 
-from . serializers import CustomUserModelSerializers
+from .serializers import CustomUserModelSerializers, CustomUserModelSignUpSerializers
 from django.contrib.auth import get_user_model
 from .models import CustomUser
 from .permissions import CustomIsAuthenticated
 USER = get_user_model()
+
 class SignUpView(CreateAPIView):
     """
     Sign Up functionality for creating object of
     Custom User Model with CustomUserModelSearializers
     """
-    serializer_class = CustomUserModelSerializers
+    serializer_class = CustomUserModelSignUpSerializers
 
 
 # class GetUserAPIView(RetrieveAPIView):
