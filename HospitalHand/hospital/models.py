@@ -11,3 +11,4 @@ class Hospital(Contacts):
 
     def __str__(self):
         return "{}".format(self.name)
+

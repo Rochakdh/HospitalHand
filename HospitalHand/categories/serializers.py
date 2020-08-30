@@ -2,9 +2,11 @@ from rest_framework import serializers
 
 from .models import Doctor, Department
 
+from hospital.models import Hospital
+
 
 class DoctorsModelSerializer(serializers.ModelSerializer):
-    hospital = serializers.SlugRelatedField(read_only=True, slug_field='name', many=True)
+    hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='name', many=True)
 
     class Meta:
         model = Doctor
