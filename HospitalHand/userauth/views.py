@@ -54,7 +54,6 @@ class UserViewSet(ModelViewSet):
 
 
 
-
 class CustomAuthToken(ObtainAuthToken):
 
     def post(self, request, *args, **kwargs):
@@ -64,3 +63,5 @@ class CustomAuthToken(ObtainAuthToken):
         user = serializer.validated_data['user']
         token, created = Token.objects.get_or_create(user=user)
         return Response({'token': token.key,'id':token.user.id})
+
+

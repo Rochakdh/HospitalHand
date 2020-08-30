@@ -81,7 +81,10 @@
       <workItem from="1598411029375" duration="10685000" />
       <workItem from="1598500858814" duration="940000" />
       <workItem from="1598506592265" duration="14305000" />
-      <workItem from="1598590537326" duration="10888000" />
+      <workItem from="1598590537326" duration="14229000" />
+      <workItem from="1598707082410" duration="184000" />
+      <workItem from="1598708755389" duration="2179000" />
+      <workItem from="1598765305340" duration="11664000" />
     </task>
     <servers />
   </component>
@@ -128,9 +131,13 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog/0.0.1280.680@0.0.1280.680" timestamp="1597300815347" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1598451999014">
+    <state x="93" y="93" width="1095" height="495" key="dock-window-1" timestamp="1598791243843">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598451999014" />
+    <state x="93" y="93" width="1095" height="495" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1598791243843" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1598791211102">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598791211102" />
   </component>
 </project>

@@ -72,21 +72,23 @@ class CustomUserModelSerializers ( serializers.ModelSerializer ):
     Serializers to Model CustomUser
     """
 
-    confirm_password = serializers.CharField( max_length=128,
+    old_password = serializers.CharField( max_length=128,
                                              style={'input_type':'password'},
                                              write_only=True )
+    new_password = serializers.CharField(max_length=128,
+                                         style={'input_type': 'password'},
+                                         write_only=True)
     class Meta:
         model = CustomUser
         fields = ['id', 'email',
-                  'username','contact_number','contact_address',
-                  'password','confirm_password','first_name','middle_name','last_name','date_of_birth','profile_pictures']
+                  'username','contact_number','contact_address','new_password','old_password'
+                  ,'first_name','middle_name','last_name','date_of_birth','profile_pictures']
         read_only_fields = ['id']
         extra_kwargs = {
             'password':{
                 'write_only' : True
             },
         }
-
 
 
     @staticmethod
@@ -135,36 +137,12 @@ class CustomUserModelSerializers ( serializers.ModelSerializer ):
             Overriding update class to set hashable password of user
             :return: instance of the CustomUser
         """
-        password = validated_data.get('password')
-        user = super( CustomUserModelSerializers, self ).update( instance,validated_data )
-        user.set_password( password )  # converting to hashable password
+        print(f'VAlDATED{validated_data}')
+        user = super(CustomUserModelSerializers, self).update(instance,validated_data)
+        if validated_data.get("old_password"):
+            if not user.check_password(validated_data.get("old_password")):
+                raise serializers.ValidationError('Old Password Not Correct')
+            password = validated_data['new_password']
+            user.set_password(password)  # converting to hashable password
         user.save()
         return user
-
-    def get_fields(self):
-        fields = super().get_fields()
-        print(fields)
-        view = self.context.get('view')
-        if view and view.action in ['update','partial_update']:
-            print(fields.get('password'))
-            fields.pop('password')
-            fields.pop('confirm_password')
-            # fields['first_name'].read_only = False
-            # fields['middle_name'].read_only = False
-            # fields['last_name'].read_only = False
-            # fields['contact_addresss'].read_only = False
-        return fields
-
-
-
-
-
-
-
-
-
-
-
-
-
-
