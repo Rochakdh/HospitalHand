@@ -1,9 +1,6 @@
-<< << << < HEAD
-from rest_framework.generics import CreateAPIView, UpdateAPIView
-== == == =
 from rest_framework.authtoken.models import Token
 from rest_framework.generics import CreateAPIView, UpdateAPIView, RetrieveAPIView
->> >> >> > rochak
+
 from rest_framework.response import Response
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -66,5 +63,3 @@ class CustomAuthToken(ObtainAuthToken):
         user = serializer.validated_data['user']
         token, created = Token.objects.get_or_create(user=user)
         return Response({'token': token.key, 'id': token.user.id})
-
-
