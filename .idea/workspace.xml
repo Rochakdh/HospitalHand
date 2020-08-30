@@ -10,6 +10,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -27,12 +28,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/HospitalHand" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../django/ModelsCheck" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -64,6 +66,22 @@
       <workItem from="1597563026577" duration="2450000" />
       <workItem from="1597565520477" duration="10000" />
       <workItem from="1597565556438" duration="1143000" />
+      <workItem from="1597637286989" duration="33000" />
+      <workItem from="1597637334262" duration="1816000" />
+      <workItem from="1597666465640" duration="9108000" />
+      <workItem from="1597679277072" duration="1811000" />
+      <workItem from="1597749139883" duration="7597000" />
+      <workItem from="1597844519941" duration="3577000" />
+      <workItem from="1597890735504" duration="6435000" />
+      <workItem from="1598008852473" duration="8111000" />
+      <workItem from="1598074298239" duration="7832000" />
+      <workItem from="1598156158260" duration="9663000" />
+      <workItem from="1598256366446" duration="6527000" />
+      <workItem from="1598327787843" duration="2656000" />
+      <workItem from="1598411029375" duration="10685000" />
+      <workItem from="1598500858814" duration="940000" />
+      <workItem from="1598506592265" duration="14305000" />
+      <workItem from="1598590537326" duration="10888000" />
     </task>
     <servers />
   </component>
@@ -90,40 +108,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1597300982527" />
-    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1597420115636">
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1598540965419">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1597420115636" />
-    <state x="372" y="191" key="FileChooserDialogImpl" timestamp="1597565697371">
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1280.680@0.0.1280.680" timestamp="1598540965419" />
+    <state x="372" y="191" key="FileChooserDialogImpl" timestamp="1598462841703">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="372" y="191" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1597565697371" />
+    <state x="372" y="191" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1598462841703" />
     <state width="198" height="457" key="HiddenNamespacesPopup" timestamp="1597300906598">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="198" height="457" key="HiddenNamespacesPopup/0.0.1280.680@0.0.1280.680" timestamp="1597300906598" />
-    <state x="265" y="0" key="SettingsEditor" timestamp="1597565780246">
+    <state x="265" y="0" key="SettingsEditor" timestamp="1597666442109">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597565780246" />
+    <state x="265" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597666442109" />
     <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog" timestamp="1597300815347">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog/0.0.1280.680@0.0.1280.680" timestamp="1597300815347" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1597253315707">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1598451999014">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1597253315707" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/HospitalHand/HospitalHand/settings.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1598451999014" />
   </component>
 </project>

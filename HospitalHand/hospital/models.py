@@ -1,5 +1,6 @@
 from django.db import models
 from userauth.models import Contacts
+from categories.models import Doctor
 
 '''
 Model For Hospitals and their relation with Doctors
@@ -11,4 +12,5 @@ class Hospital(Contacts):
 
     def __str__(self):
         return "{}".format(self.name)
+
 
