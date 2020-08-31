@@ -1,6 +1,5 @@
 from django.db import models
 from userauth.models import Contacts
-from categories.models import Doctor
 
 '''
 Model For Hospitals and their relation with Doctors
