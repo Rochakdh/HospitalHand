@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'notice',
     'rest_framework',
     'corsheaders',
+    # 'djcelery',
+    # 'django-redis',
     'django_celery_beat',
     'redis',
     # 'rest_framework.authtoken'
@@ -132,9 +134,10 @@ STATIC_URL = '/static/'
 
 
 # CELERY STUFF
-BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Nepal Time'
+# app.conf.broker_url = 'redis://localhost:6379/0'
