@@ -1,19 +1,23 @@
 from django.db import models
+
+from hospital.models import Hospital
 from userauth.models import CustomUser
 from categories.models import Doctor
+
 
 # Create your models here.
 
 class Appointment(models.Model):
-    patient_name = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    authentication_token = models.CharField(max_length=200)
+    patient_name = models.CharField(max_length=200)
     patient_problem_description = models.TextField(max_length=500)
-    upload_prescription_photo = models.ImageField( blank=True,null=True)
-    medicines_taken = models.TextField(max_length=200,null=True)
-    doctor_requested = models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    medicines_taken = models.TextField(max_length=200, null=True)
+    doctor_requested = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     fixed_appointment = models.BooleanField(default=False)
-    appointment_time = models.DateTimeField(default=None,blank=True,null=True)
+    appointment_date = models.DateField(default=None)
+    appointment_time = models.TimeField(default=None)
     date_posted = models.DateField(auto_now=True)
-    select_hospital = models.Choices
+    select_hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
 
-
-
+    def __str__(self):
+        return self.patient_name
