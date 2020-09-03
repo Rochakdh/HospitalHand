@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, UpdateAPIView, ListAPIView, RetrieveUpdateAPIView
-from .serializers import AppointmentSerializers, AppointmentFixSerializers
+from rest_framework.generics import ListCreateAPIView, UpdateAPIView, ListAPIView, RetrieveUpdateAPIView, DestroyAPIView
+from .serializers import AppointmentSerializers, AppointmentFixSerializers, AppointmentUpdateSerializers
 from .models import Appointment
 
 
@@ -28,6 +28,12 @@ class ProfileAppointment(ListAPIView):
 
 
 class UpdateAppointment(RetrieveUpdateAPIView):
+    serializer_class = AppointmentUpdateSerializers
+    queryset = Appointment.objects.all()
+    lookup_field = 'id'
+
+
+class DeleteAppointment(DestroyAPIView):
     serializer_class = AppointmentSerializers
     queryset = Appointment.objects.all()
     lookup_field = 'id'

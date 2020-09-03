@@ -29,3 +29,9 @@ class AppointmentFixSerializers(serializers.ModelSerializer):
         model = Appointment
         fields = ['fixed_appointment', 'appointment_time', 'appointment_date', 'select_hospital',
                   'authentication_token', 'doctor_requested']
+
+
+class AppointmentUpdateSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Appointment
+        fields = ['appointment_time', 'appointment_date', 'patient_name']
