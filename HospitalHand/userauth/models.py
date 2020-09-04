@@ -26,4 +26,6 @@ class CustomUser(AbstractUser, Contacts):
     middle_name = models.CharField(max_length=120, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     profile_pictures = models.ImageField(blank=True, null=True)
-    REQUIRED_FIELDS = ['date_of_birth', 'contact_number']
+    is_hospital = models.BooleanField(default=False)
+    # REQUIRED_FIELDS = ['date_of_birth', 'contact_number']
+

@@ -152,4 +152,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 #Acknowledging Django To Use Custom User Model
 AUTH_USER_MODEL = 'userauth.CustomUser'
-

@@ -62,4 +62,4 @@ class CustomAuthToken(ObtainAuthToken):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         token, created = Token.objects.get_or_create(user=user)
-        return Response({'token': token.key, 'id': token.user.id})
+        return Response({'token': token.key, 'id': token.user.id,'loginflag':token.user.is_hospital})

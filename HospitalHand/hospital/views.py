@@ -4,9 +4,9 @@ from .models import Hospital
 
 
 # Using generic Views
-
-class DoctorsModelCreateAPIView(CreateAPIView):
-    serializer_class = HospitalModelSerializer
+#
+# class DoctorsModelCreateAPIView(CreateAPIView):
+#     serializer_class = HospitalModelSerializer
 
 
 class DoctorsModelListAPIView(ListAPIView):
