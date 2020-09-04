@@ -6,7 +6,8 @@ from hospital.models import Hospital
 
 class AppointmentSerializers(serializers.ModelSerializer):
     doctor_requested = serializers.SlugRelatedField(queryset=Doctor.objects.all(), slug_field='name', many=False)
-    select_hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='name', many=False)
+    select_hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='hospital_name',
+                                                   many=False)
 
     class Meta:
         model = Appointment
@@ -27,8 +28,8 @@ class AppointmentSerializers(serializers.ModelSerializer):
 class AppointmentFixSerializers(serializers.ModelSerializer):
     class Meta:
         model = Appointment
-        fields = ['fixed_appointment', 'appointment_time', 'appointment_date', 'select_hospital',
-                  'authentication_token', 'doctor_requested']
+        fields = ['fixed_appointment','patient_name', 'appointment_time', 'appointment_date', 'select_hospital',
+                  'doctor_requested']
 
 
 class AppointmentUpdateSerializers(serializers.ModelSerializer):

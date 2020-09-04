@@ -6,7 +6,7 @@ from hospital.models import Hospital
 
 
 class DoctorsModelSerializer(serializers.ModelSerializer):
-    # hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='name', many=True)
+    hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='hospital_name', many=True)
 
     class Meta:
         model = Doctor

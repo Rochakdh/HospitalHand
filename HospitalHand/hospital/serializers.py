@@ -6,6 +6,4 @@ from .models import Hospital
 class HospitalModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hospital
-        fields = ['name', 'contact_address', 'contact_number','id']
-
-   
+        fields = ['name', 'hospital_name', 'contact_address', 'contact_number', 'id']

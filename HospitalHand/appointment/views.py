@@ -12,7 +12,12 @@ class CreateAppointment(ListCreateAPIView):
     # lookup_field = 'id'
 
 
-class FixAppointment(UpdateAPIView):
+class FixAppointmentUpdate(UpdateAPIView):
+    serializer_class = AppointmentFixSerializers
+    queryset = Appointment.objects.all()
+
+
+class FixAppointmentList(ListAPIView):
     serializer_class = AppointmentFixSerializers
     queryset = Appointment.objects.all()
 
