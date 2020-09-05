@@ -14,8 +14,8 @@ class Appointment(models.Model):
     medicines_taken = models.TextField(max_length=200, null=True)
     doctor_requested = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     fixed_appointment = models.BooleanField(default=False)
-    appointment_date = models.DateField(default=None)
-    appointment_time = models.TimeField(default=None)
+    appointment_date = models.DateField(default=None, null=True)
+    appointment_time = models.TimeField(default=None, null=True)
     date_posted = models.DateField(auto_now=True)
     select_hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
 

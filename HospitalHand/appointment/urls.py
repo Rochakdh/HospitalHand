@@ -7,8 +7,8 @@ app_name = 'appointment'
 
 urlpatterns = [
     path('create/', views.CreateAppointment.as_view(), name='createappointment'),
-    path('hospital/<int:pk>', views.FixAppointmentUpdate.as_view(), name='fixappointmentupdate'),
-    path('hospital/', views.FixAppointmentList.as_view(), name='fixappointmentlist'),
+    path('hospital/update/<int:id>', views.FixAppointmentUpdate.as_view(), name='fixappointmentupdate'),
+    path('hospital/<str:authentication_token>', views.FixAppointmentList.as_view(), name='fixappointmentlist'),
 
     path('profile/<str:authentication_token>', views.ProfileAppointment.as_view(), name='profileappointment'),
     path('profile/update/<int:id>', views.UpdateAppointment.as_view(), name='updateappointment'),
