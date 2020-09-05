@@ -36,7 +36,7 @@
     <property name="database.data.extractors.current.id" value="Comma-separated (CSV)_id" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../django/ModelsCheck" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\XPS\AppData\Roaming\Subversion</configuration>
@@ -128,10 +128,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="198" height="457" key="HiddenNamespacesPopup/0.0.1280.680@0.0.1280.680" timestamp="1597300906598" />
-    <state x="265" y="0" key="SettingsEditor" timestamp="1597666442109">
+    <state x="265" y="0" key="SettingsEditor" timestamp="1599304600331">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="265" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1597666442109" />
+    <state x="265" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599304600331" />
     <state x="221" y="0" key="com.intellij.database.dbimport.ImportDialog" timestamp="1597300815347">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
