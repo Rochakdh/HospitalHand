@@ -26,7 +26,7 @@ urlpatterns = [
     path('hospital/', include('hospital.urls')),
 
     path('appointment/', include('appointment.urls', namespace='appointment')),
-
+    path('', include('notice.urls')),
 ]
 
 if settings.DEBUG:
