@@ -10,7 +10,7 @@ class DoctorsModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Doctor
-        fields = ['name', 'experience', 'department', 'hospital', 'id','contact_number','email']
+        fields = ['name', 'experience', 'department', 'hospital', 'id', 'contact_number', 'email']
         # read_only_fields = ['id']
 
 
