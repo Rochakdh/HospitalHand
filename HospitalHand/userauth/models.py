@@ -29,3 +29,5 @@ class CustomUser(AbstractUser, Contacts):
     is_hospital = models.BooleanField(default=False)
     # REQUIRED_FIELDS = ['date_of_birth', 'contact_number']
 
+
+

@@ -12,9 +12,20 @@ class CreateAppointment(ListCreateAPIView):
     # lookup_field = 'id'
 
 
-class FixAppointment(UpdateAPIView):
+class FixAppointmentUpdate(UpdateAPIView):
     serializer_class = AppointmentFixSerializers
     queryset = Appointment.objects.all()
+    lookup_field = 'id'
+
+
+class FixAppointmentList(ListAPIView):
+    serializer_class = AppointmentFixSerializers
+    queryset = Appointment.objects.all()
+    lookup_field = "authentication_token"
+
+    def get_queryset(self):
+        authentication_token = self.kwargs['authentication_token']
+        return Appointment.objects.filter(authentication_token=authentication_token)
 
 
 class ProfileAppointment(ListAPIView):
