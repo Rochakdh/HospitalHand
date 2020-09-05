@@ -16,6 +16,8 @@ class Doctor(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     experience = models.IntegerField(default=1)
     hospital = models.ManyToManyField(Hospital)
+    contact_number =models.IntegerField()
+    email = models.EmailField()
 
     class Meta:
         ordering = ['name']

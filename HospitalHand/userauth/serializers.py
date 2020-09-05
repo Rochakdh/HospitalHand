@@ -150,8 +150,4 @@ def get_fields(self):
         print(fields.get('password'))
         fields.pop('password')
         fields.pop('confirm_password')
-        # fields['first_name'].read_only = False
-        # fields['middle_name'].read_only = False
-        # fields['last_name'].read_only = False
-        # fields['contact_addresss'].read_only = False
     return fields
