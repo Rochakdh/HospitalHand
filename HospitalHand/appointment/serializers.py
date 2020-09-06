@@ -25,7 +25,7 @@ class AppointmentSerializers(serializers.ModelSerializer):
 
 
 class AppointmentFixSerializers(serializers.ModelSerializer):
-    select_hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='hospital_name',
+    select_hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='name_id',
                                                    many=False)
     doctor_requested = serializers.SlugRelatedField(queryset=Doctor.objects.all(), slug_field='name', many=False)
 

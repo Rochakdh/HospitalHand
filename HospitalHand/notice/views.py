@@ -1,9 +1,5 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.views.generic.edit import FormView
-from django.shortcuts import redirect
-from django.utils import timezone
-from rest_framework.generics import CreateAPIView, ListAPIView
+
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 
 from .forms import notice_form
 from .models import notice_model
@@ -16,6 +12,11 @@ class notice_view(CreateAPIView):
 
 
 class notice_list_view(ListAPIView):
-    sleepy(10)
+    serializer_class = notice_serializers
+    queryset = notice_model.objects.all()
+
+
+class notice_delete_view(RetrieveUpdateDestroyAPIView):
+    lookup_field = 'pk'
     serializer_class = notice_serializers
     queryset = notice_model.objects.all()
