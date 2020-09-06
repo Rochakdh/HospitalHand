@@ -6,7 +6,7 @@ from hospital.models import Hospital
 from userauth.models import CustomUser
 from .serializers import AppointmentSerializers, AppointmentFixSerializers, AppointmentUpdateSerializers
 from .models import Appointment
-
+from .permissions import HospitalIsAuthenticated
 
 # Create your views here.
 
@@ -25,11 +25,12 @@ class FixAppointmentUpdate(UpdateAPIView):
 class FixAppointmentList(ListAPIView):
     serializer_class = AppointmentFixSerializers
     queryset = Appointment.objects.all()
-    lookup_field = "select_hospital"
-
-    def get_queryset(self):
-        select_hospital = self.kwargs['select_hospital']
-        return Appointment.objects.filter(select_hospital=select_hospital)
+    permission_classes = [HospitalIsAuthenticated]
+    # lookup_field = "select_hospital"
+    #
+    # def get_queryset(self):
+    #     select_hospital = self.kwargs['select_hospital']
+    #     return Appointment.objects.filter(select_hospital=select_hospital)
 
 
 class ProfileAppointment(ListAPIView):

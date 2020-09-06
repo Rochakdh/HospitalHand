@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'hospital',
     'corsheaders',
     'notice',
-    'django_celery_beat',
-    'redis',
+    # 'django_celery_beat',
+    # 'redis',
+
 
 ]
 
