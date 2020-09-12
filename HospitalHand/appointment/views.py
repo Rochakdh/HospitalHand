@@ -13,7 +13,6 @@ from .permissions import HospitalIsAuthenticated
 class CreateAppointment(ListCreateAPIView):
     serializer_class = AppointmentSerializers
     queryset = Appointment.objects.all()
-    # lookup_field = 'id'
 
 
 class FixAppointmentUpdate(UpdateAPIView):
@@ -25,12 +24,12 @@ class FixAppointmentUpdate(UpdateAPIView):
 class FixAppointmentList(ListAPIView):
     serializer_class = AppointmentFixSerializers
     queryset = Appointment.objects.all()
-    # permission_classes = [HospitalIsAuthenticated]
-    # lookup_field = "select_hospital"
-    #
-    # def get_queryset(self):
-    #     select_hospital = self.kwargs['select_hospital']
-    #     return Appointment.objects.filter(select_hospital=select_hospital)
+
+    def get_queryset(self):
+        super(FixAppointmentList, self).get_queryset()
+        get_hospital_id = Hospital.objects.get(name=self.request.user.id)
+        print(self.request.user.id)
+        return self.queryset.filter(select_hospital = get_hospital_id)
 
 
 class ProfileAppointment(ListAPIView):
