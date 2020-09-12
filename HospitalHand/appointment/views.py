@@ -25,7 +25,7 @@ class FixAppointmentUpdate(UpdateAPIView):
 class FixAppointmentList(ListAPIView):
     serializer_class = AppointmentFixSerializers
     queryset = Appointment.objects.all()
-    permission_classes = [HospitalIsAuthenticated]
+    # permission_classes = [HospitalIsAuthenticated]
     # lookup_field = "select_hospital"
     #
     # def get_queryset(self):

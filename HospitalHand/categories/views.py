@@ -2,16 +2,14 @@ from django.shortcuts import render
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView,RetrieveAPIView
 from .serializers import DoctorsModelSerializer, DepartmentModelSerializer
 from .models import Doctor, Department
-from .permissions import HospitalIsAuthenticated
-
+from .permissions import HospitalIsAuthenticated,HospitalIsObjectAuthenticated
+from hospital.models import Hospital
 
 # Using generic Views
 
 class DoctorsModelCreateAPIView(CreateAPIView):
     serializer_class = DoctorsModelSerializer
     permission_classes = [HospitalIsAuthenticated]
-    lookup_field = 'id'
-    lookup_url_kwarg = 'id'
 
 
 
@@ -27,11 +25,13 @@ class DoctorsModelDestroyAPIView(DestroyAPIView):
 class DoctorsModelListAPIView(ListAPIView):
     serializer_class = DoctorsModelSerializer
     queryset = Doctor.objects.all()
-    lookup_field = "department"
-
+    permission_classes = [HospitalIsObjectAuthenticated,HospitalIsAuthenticated]
+    # #
     def get_queryset(self):
-        department = self.kwargs['department']
-        return Doctor.objects.filter(department=department)
+        super(DoctorsModelListAPIView, self).get_queryset()
+        get_hospital_id = Hospital.objects.get(name=self.request.user.id)
+        print(self.request.user.id)
+        return self.queryset.filter(hospital=get_hospital_id)
 
 class DepartmentModelListAPIView(ListAPIView):
     serializer_class = DepartmentModelSerializer

@@ -19,6 +19,7 @@ class Doctor(models.Model):
     contact_number = models.IntegerField()
     email = models.EmailField()
 
+
     class Meta:
         ordering = ['name']
 
