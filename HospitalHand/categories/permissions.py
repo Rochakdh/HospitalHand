@@ -12,13 +12,10 @@ class HospitalIsAuthenticated(IsAuthenticated):
             return False
 
 
-
-
 class HospitalIsObjectAuthenticated(IsAuthenticated):
     message = 'Access Denied'
 
-
     def has_object_permission(self, request, view, obj):
-            print(f'Request->>{request}')
-            print(f'object->>{obj}')
-            return request.user == obj
+        print(f'Request->>{request}')
+        print(f'object->>{obj}')
+        return request.user == obj
