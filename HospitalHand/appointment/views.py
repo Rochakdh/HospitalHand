@@ -8,6 +8,7 @@ from .serializers import AppointmentSerializers, AppointmentFixSerializers, Appo
 from .models import Appointment
 from .permissions import HospitalIsAuthenticated,HospitalIsObjectAuthenticated
 
+
 # Create your views here.
 
 class CreateAppointment(ListCreateAPIView):
@@ -29,7 +30,7 @@ class FixAppointmentList(ListAPIView):
         super(FixAppointmentList, self).get_queryset()
         get_hospital_id = Hospital.objects.get(name=self.request.user.id)
         print(self.request.user.id)
-        return self.queryset.filter(select_hospital = get_hospital_id)
+        return self.queryset.filter(select_hospital=get_hospital_id)
 
 
 class ProfileAppointment(ListAPIView):

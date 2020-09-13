@@ -4,7 +4,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('notice/', notice_view.as_view()),
-    path('notice/update_delete/<int:pk>/', notice_delete_view.as_view()),
+    path('notice/update_delete/<int:id>', notice_delete_view.as_view()),
     path('notice/list/', notice_list_view.as_view()),
     path('auth/', obtain_auth_token),
 ]
