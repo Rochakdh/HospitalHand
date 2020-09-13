@@ -57,16 +57,10 @@ class DeleteAppointment(DestroyAPIView):
 class DoctorAppointment(ListAPIView):
     serializer_class = DoctorAppointmentSerializers
     queryset = Appointment.objects.all()
-    lookup_field = 'doctor_requested'
-    lookup_url_kwarg = 'doctor_requested'
+    # lookup_field = 'doctor_requested'
+    # lookup_url_kwarg = 'doctor_requested'
     permission_classes = [HospitalIsAuthenticated,HospitalIsObjectAuthenticated]
 
     def get_queryset(self):
-        """
-        This view should return a list of all the purchases
-        for the currently authenticated user.
-        """
-        # user = self.request.user
-        # return Appointment.objects.filter(selected_doctor=self.request.)
         super(DoctorAppointment, self).get_queryset()
         return self.queryset.filter(doctor_requested_id = self.kwargs['doctor_requested_id'])
