@@ -13,5 +13,6 @@ urlpatterns = [
     path('profile/<str:authentication_token>', views.ProfileAppointment.as_view(), name='profileappointment'),
     path('profile/update/<int:id>', views.UpdateAppointment.as_view(), name='updateappointment'),
     path('profile/delete/<int:id>', views.DeleteAppointment.as_view(), name='deleteappointment'),
+    path('doctor/<int:doctor_requested_id>', views.DoctorAppointment.as_view(), name='doctorappointment'),
 
 ]

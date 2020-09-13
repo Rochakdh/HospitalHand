@@ -27,8 +27,8 @@ class AppointmentSerializers(serializers.ModelSerializer):
 class AppointmentFixSerializers(serializers.ModelSerializer):
     select_hospital = serializers.SlugRelatedField(queryset=Hospital.objects.all(), slug_field='name_id',
                                                    many=False)
-    doctor_requested = serializers.SlugRelatedField(queryset=Doctor.objects.all(), slug_field='name', many=False)
-
+    doctor_requested = serializers.SlugRelatedField(queryset=Doctor.objects.all(), slug_field='name',
+                                                    many=False)
     class Meta:
         model = Appointment
         fields = ['id', 'fixed_appointment', 'patient_name', 'appointment_time', 'appointment_date', 'select_hospital',
@@ -39,3 +39,10 @@ class AppointmentUpdateSerializers(serializers.ModelSerializer):
     class Meta:
         model = Appointment
         fields = ['patient_name', 'patient_problem_description', 'medicines_taken']
+
+
+class DoctorAppointmentSerializers(serializers.ModelSerializer):
+    doctor_requested = serializers.SlugRelatedField(queryset=Appointment.objects.all(),slug_field='name')
+    class Meta:
+        model = Appointment
+        fields = ['patient_name', 'patient_problem_description','appointment_time','appointment_date','doctor_requested']

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView,RetrieveAPIView
-from .serializers import DoctorsModelSerializer, DepartmentModelSerializer
+from .serializers import DoctorsModelSerializer, DepartmentModelSerializer,DoctorsModelListSerializer
 from .models import Doctor, Department
 from .permissions import HospitalIsAuthenticated,HospitalIsObjectAuthenticated
 from hospital.models import Hospital
@@ -23,7 +23,7 @@ class DoctorsModelDestroyAPIView(DestroyAPIView):
     queryset = Doctor.objects.all()
 
 class DoctorsModelListAPIView(ListAPIView):
-    serializer_class = DoctorsModelSerializer
+    serializer_class = DoctorsModelListSerializer
     queryset = Doctor.objects.all()
     permission_classes = [HospitalIsObjectAuthenticated,HospitalIsAuthenticated]
     # #
