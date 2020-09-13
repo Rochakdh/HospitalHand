@@ -60,9 +60,7 @@ class DeleteAppointment(DestroyAPIView):
 class DoctorAppointment(ListAPIView):
     serializer_class = DoctorAppointmentSerializers
     queryset = Appointment.objects.all()
-    lookup_field = 'doctor_requested'
-    lookup_url_kwarg = 'doctor_requested'
-    permission_classes = [HospitalIsAuthenticated, HospitalIsObjectAuthenticated]
+    # permission_classes = [HospitalIsAuthenticated, HospitalIsObjectAuthenticated]
 
     def get_queryset(self):
         """
