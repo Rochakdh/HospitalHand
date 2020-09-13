@@ -1,10 +1,8 @@
-
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 
-from .forms import notice_form
+from hospital.models import Hospital
 from .models import notice_model
 from .serializers import notice_serializers
-from .task import sleepy
 
 
 class notice_view(CreateAPIView):
@@ -17,6 +15,6 @@ class notice_list_view(ListAPIView):
 
 
 class notice_delete_view(RetrieveUpdateDestroyAPIView):
-    lookup_field = 'pk'
+    lookup_field = 'id'
     serializer_class = notice_serializers
     queryset = notice_model.objects.all()
