@@ -13,7 +13,8 @@ class AppointmentSerializers(serializers.ModelSerializer):
     class Meta:
         model = Appointment
         fields = ['id', 'authentication_token', 'doctor_requested', 'patient_name',
-                  'patient_problem_description', 'medicines_taken', 'select_hospital']
+                  'patient_problem_description', 'medicines_taken', 'select_hospital', 'appointment_date',
+                  'appointment_time', 'fixed_appointment']
 
         validators = [
             serializers.UniqueTogetherValidator(
@@ -29,6 +30,7 @@ class AppointmentFixSerializers(serializers.ModelSerializer):
                                                    many=False)
     doctor_requested = serializers.SlugRelatedField(queryset=Doctor.objects.all(), slug_field='name',
                                                     many=False)
+
     class Meta:
         model = Appointment
         fields = ['id', 'fixed_appointment', 'patient_name', 'appointment_time', 'appointment_date', 'select_hospital',
@@ -42,7 +44,8 @@ class AppointmentUpdateSerializers(serializers.ModelSerializer):
 
 
 class DoctorAppointmentSerializers(serializers.ModelSerializer):
-    doctor_requested = serializers.SlugRelatedField(queryset=Appointment.objects.all(),slug_field='name')
+    doctor_requested = serializers.SlugRelatedField(queryset=Appointment.objects.all(), slug_field='name')
+
     class Meta:
         model = Appointment
         fields = ['patient_name', 'patient_problem_description','appointment_time','appointment_date','doctor_requested']
